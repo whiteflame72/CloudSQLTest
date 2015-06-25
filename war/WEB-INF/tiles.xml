@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <!-- Layouts -->
+    <definition name="baseLayout" template="/WEB-INF/layouts/baseLayout.jsp">
+        <put-attribute name="mainTitle" value="Web Application"/>
+        <put-attribute name="title" value="Template"/>
+    </definition>
+
+    <!-- Here you include the tiles pages -->
+    <!-- PLEASE DO NOT REMOVE THE COMMENT BELOW -->
+    <!-- generator:pages -->
+    <definition name="movieIndex" extends="baseLayout">
+        <put-attribute name="title" value="Index of Movie" />
+        <put-attribute name="body" value="/WEB-INF/movie/index.jsp" />
+    </definition>
+    <definition name="movieAdd" extends="baseLayout">
+        <put-attribute name="title" value="Add of Movie" />
+        <put-attribute name="body" value="/WEB-INF/movie/add.jsp" />
+    </definition>
+    <definition name="movieEdit" extends="baseLayout">
+        <put-attribute name="title" value="Edit of Movie" />
+        <put-attribute name="body" value="/WEB-INF/movie/edit.jsp" />
+    </definition>
+
+
+</tiles-definitions>

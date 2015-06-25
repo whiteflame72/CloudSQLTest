@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	<filter-mapping>  
+        <filter-name>struts2</filter-name>
+        <url-pattern>/struts/*</url-pattern>  
+    </filter-mapping>
+	<filter-mapping>  
+        <filter-name>struts2</filter-name>
+        <url-pattern>/movie/*</url-pattern>  
+    </filter-mapping>
+<!--
+-->
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>redirect.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Start: Spring Integration -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!-- End: Spring Integration -->
+
+    <!-- Start: wro4j configuration -->
+<!--
+    <filter>
+        <filter-name>WebResourceOptimizer</filter-name>
+        <filter-class>ro.isdc.wro.http.WroFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>WebResourceOptimizer</filter-name>
+        <url-pattern>/resources/*</url-pattern>
+    </filter-mapping>
+-->
+    <!-- End: wro4j configuration -->
+
+    <!-- Start: HTML Compressor -->
+    <tablib>
+        <taglib-uri>http://htmlcompressor.googlecode.com/taglib/compressor</taglib-uri>
+        <taglib-location>/WEB-INF/htmlcompressor.tld</taglib-location>
+    </tablib>
+    <!-- End: HTML Compressor -->
+
+    <!-- Start: Tiles Configuration -->
+<!-- No longer needed, c.f. http://tiles.apache.org/framework/tutorial/configuration.html -->
+    <context-param>
+        <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+        <param-value>/WEB-INF/tiles.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+    </listener>
+	<listener>
+        <listener-class>com.ociweb.gaestruts2.InitListener</listener-class> 
+	</listener>
+<!--
+<servlet>
+    <servlet-name>tiles</servlet-name>
+    <servlet-class>org.apache.tiles.web.startup.TilesServlet</servlet-class>
+	<load-on-startup>2</load-on-startup>
+</servlet>
+<servlet-mapping>
+           <servlet-name>tiles</servlet-name>
+           <url-pattern>/movie/*</url-pattern>
+</servlet-mapping>
+-->
+          
+     <!-- End: Tiles Configuration -->
+</web-app>

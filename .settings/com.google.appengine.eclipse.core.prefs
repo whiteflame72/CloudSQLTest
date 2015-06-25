@@ -1,0 +1,26 @@
+#Fri Jan 06 22:53:21 EST 2012
+eclipse.preferences.version=1
+filesCopiedToWebInfLib=appengine-api-1.0-sdk-1.6.1.jar|appengine-api-labs-1.6.1.jar|appengine-jsr107cache-1.6.1.jar|jsr107cache-1.1.jar|datanucleus-appengine-1.0.10.final.jar|datanucleus-core-1.1.5.jar|datanucleus-jpa-1.1.5.jar|geronimo-jpa_3.0_spec-1.1.1.jar|geronimo-jta_1.1_spec-1.1.1.jar|jdo2-api-2.3-eb.jar|google_sql.jar
+gaeDatanucleusEnabled=true
+gaeDeployDialogSettings=
+gaeHrdEnabled=true
+gaeIsEclipseDefaultInstPath=true
+googleCloudSqlEnabled=true
+localDevMySqlEnabled=true
+mySqlDatabaseName=movie
+mySqlDatabasePassword=
+mySqlDatabaseUser=root
+mySqlHostName=localhost
+mySqlIsConfigured=true
+mySqlJdbcJar=/Users/ag/CloudSQLTest/war/WEB-INF/lib/mysql-connector-java-5.1.18-bin.jar
+mySqlPort=3306
+prodDatabaseName=movie
+prodDatabasePassword=
+prodDatabaseUser=
+prodInstanceName=cloudsqldb\:clouddb
+prodIsConfigured=true
+testDatabaseName=movie
+testDatabasePassword=
+testDatabaseUser=
+testInstanceName=cloudsqldb\:clouddb
+testIsConfigured=true

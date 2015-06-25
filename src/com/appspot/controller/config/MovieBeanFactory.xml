@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- generator:beans -->
+    <bean id="movieRepositoryHibernate" class="com.appspot.model.repository.MovieRepositoryHibernate" />
+    <bean id="movieServiceImpl" class="com.appspot.model.service.MovieServiceImpl" />
+
+    <bean id="moviePagingLookupManagerImpl" class="com.framework.util.pagination.manager.PagingLookupManagerImpl">
+        <property name="repository" ref="movieRepositoryHibernate" />
+    </bean>
+    
+    <bean id="movieController" class="com.appspot.controller.MovieController" singleton="false">
+        <property name="paginateListFactory" ref="paginateListFactory" />
+        <property name="pagingManager" ref="moviePagingLookupManagerImpl" />
+        <property name="movieService" ref="movieServiceImpl" />
+    </bean>
+</beans>
